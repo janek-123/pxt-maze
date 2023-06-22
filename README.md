@@ -13,6 +13,15 @@ Robot dokáře řešit bludiště pomocí dvou algoritmů:
 - nevýhody: najde pouze 1. možné řešení bludiště
 - limitace: šířka zdí se nesmí nijak zásadně lišit
 
+Ukázka řešení bludiště pomocí Depth-First Search
+
+[![Auticko](https://img.youtube.com/vi/PxUHhGyrYmM/0.jpg)](https://www.youtube.com/watch?v=PxUHhGyrYmM)
+
+Ukázka zopakování cesty 
+
+[![Auticko](https://img.youtube.com/vi/f8aKKFPSB9Y/0.jpg)](https://www.youtube.com/watch?v=f8aKKFPSB9Y)
+
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
 
 // AUTO GENERATED
 > Open this page at [https://slattburger01.github.io/test/](https://slattburger01.github.io/test/)
