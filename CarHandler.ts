@@ -16,6 +16,7 @@ namespace CarHandler {
     const frontRightSensor = DigitalPin.P12;
     const frontLeftSensor = DigitalPin.P7; // works only when display is disabled
 
+    /** Sets PinPullMode and disables screen */
     export function SetupSensors(){
         pins.setPull(leftSensor, PinPullMode.PullNone);
         pins.setPull(frontLeftSensor, PinPullMode.PullNone);
@@ -34,7 +35,7 @@ namespace CarHandler {
     export function Gobackward(speed: number) { GoForward(-speed); }
     export function GoForward(speed: number) { Move(speed, speed); }
 
-    /** does not work with ks4031 for some reason */
+    /** moves to the side, speed > 0 = right, does not work with ks4031 for some reason */
     export function WeirdMove(speed: number) {
         RightFrontWheel(speed);
         RightBackWheel(-speed);
@@ -43,7 +44,6 @@ namespace CarHandler {
         LeftBackWheel(-speed);
     }
 
-    /** sets all wheels to 0 */
     export function StopCar() { Move(0, 0); }
 
     /** sets right wheels to "rSpeed" and left wheels to "lSpeed" */
