@@ -43,8 +43,10 @@ namespace CarHandler {
         LeftBackWheel(-speed);
     }
 
+    /** sets all wheels to 0 */
     export function StopCar() { Move(0, 0); }
 
+    /** sets right wheels to "rSpeed" and left wheels to "lSpeed" */
     function Move(rSpeed: number, lSpeed: number) {
         RightFrontWheel(rSpeed);
         RightBackWheel(rSpeed);
@@ -57,8 +59,10 @@ namespace CarHandler {
     const defAngleTime = 1030; // prev = 750 // how long does it take to rotate 180° at "rotateSpeed" in ms
     const rotateSpeed = 80; // -100 -> 100
 
+    /** negative angles are supported */
     export function RotateRight(angle: number) { Rotate(-angle); }
 
+    /** negative angles are supported */
     export function RotateLeft(angle: number) { Rotate(angle); }
 
     /** positive angle = left, negative angle = right */
@@ -97,6 +101,7 @@ namespace CarHandler {
     function RightBackWheel(speed: number) { SetWheel(2, speed); }
     function LeftBackWheel(speed: number) { SetWheel(3, speed); }
 
+    /** Sets speed for target wheel (negative speed = backward), disables wheel if speed is lower than "minSpeed" */
     function SetWheel(id : number, speed : number){
         if (invert[id]) speed = -speed;
 

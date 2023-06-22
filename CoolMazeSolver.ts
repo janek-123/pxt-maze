@@ -127,6 +127,7 @@ function Update(){
     CarHandler.EnableRGBLED(LedCount.Left, returning);
 }
 
+//** Calculates next move on cross that is car returning to */
 function CalculateReturn(leftSide : boolean, rightSide: boolean, fDist: number){
     let stopReturn = true;
     let possibleDirs = GetFixedPossibleDirections(leftSide, rightSide, fDist);
@@ -156,6 +157,7 @@ function CalculateReturn(leftSide : boolean, rightSide: boolean, fDist: number){
 
 function OnDirChanged() { dirChanges += returning ? -1 : 1; }
 
+/** Returns possible directions (normal = relative to entry point) */
 function GetFixedPossibleDirections(leftSide : boolean, rightSide : boolean, fDist : number) : Direction[] {
     let p1 = Utils.GetPossibleDirections(leftSide, rightSide, fDist, minWallDist * 1.5);
     let fixedDirs = Utils.GetFixedDirections(p1, pathToChange.direction);
@@ -173,6 +175,7 @@ function StartReturn(adjustDirChanges : boolean){
 
 
 // ------- MOVEMENT
+/** Execute direction (not immidiatelly, but based on "turnPause") */
 function ExecuteDir(dir: Direction){
     switch (dir) {
         case Direction.left: RotateLeft(); break;
@@ -181,6 +184,7 @@ function ExecuteDir(dir: Direction){
     }
 }
 
+/** Disables rotation on current cross */
 function ExecuteForwardDirection() {
     if (!l) rotatingL = true;
     else if (!r) rotatingR = true;
