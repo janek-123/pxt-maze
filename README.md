@@ -1,54 +1,26 @@
-# MAZE SOLVING MECANUM ROBOT
+# MAZE-SOLVING MECANUM ROBOT
+This project was developed using the micro:bit platform. The micro:bit serves as the brain of the robot, handling sensor inputs, motor control, and algorithm execution. The robot uses Mecanum wheels, allowing it to move in any direction (omnidirectional motion), which gives it enhanced maneuverability in confined maze spaces.
 
-Limitace: bludiště musí mít zatáčky s úhlem zhruba 90° a nesmí obsahovat nenavazující zdi
+### Limitations:
+The maze must consist of approximately 90° turns and must not contain disconnected or "floating" walls.
 
-Robot dokáře řešit bludiště pomocí dvou algoritmů:
+This robot is capable of solving mazes using two algorithms:
 
-1) Sledování levé zdi
-- výhody: ----
-- limitace: bludiště nesmí mít "nekonečnou" levou stěnu na okraji
+### 1) Left-Wall Following
 
-2) Depth-First Search
-- výhody: je schopný zapamatovat si cestu a její nejkratší variantu zopakovat
-- nevýhody: najde pouze 1. možné řešení bludiště
-- limitace: šířka zdí se nesmí nijak zásadně lišit
+Advantages: —
+Limitations: The maze must not contain an "infinite" left wall (e.g., at the edge of the maze), as it would prevent the robot from entering the maze.
 
-Ukázka řešení bludiště pomocí Depth-First Search (video)
+### 2) Depth-First Search (DFS)
+   
+Advantages: The robot can remember the path it took and replay the shortest path back to the start or to the goal.
+Disadvantages: It only finds the first possible solution, not necessarily the optimal one.
+Limitations: The width of the maze walls must be consistent and not vary significantly.
+
+Example: Solving a Maze Using Depth-First Search
 
 [![Auticko](https://img.youtube.com/vi/PxUHhGyrYmM/0.jpg)](https://www.youtube.com/watch?v=PxUHhGyrYmM)
 
-Ukázka zopakování cesty (video)
+Example: Repeating the Found Path
 
 [![Auticko](https://img.youtube.com/vi/f8aKKFPSB9Y/0.jpg)](https://www.youtube.com/watch?v=f8aKKFPSB9Y)
-
-// AUTO GENERATED
-> Open this page at [https://slattburger01.github.io/test/](https://slattburger01.github.io/test/)
-
-## Use as Extension
-
-This repository can be added as an **extension** in MakeCode.
-
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/slattburger01/test** and import
-
-## Edit this project ![Build status badge](https://github.com/slattburger01/test/workflows/MakeCode/badge.svg)
-
-To edit this repository in MakeCode.
-
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/slattburger01/test** and click import
-
-## Blocks preview
-
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
-
-![A rendered view of the blocks](https://github.com/slattburger01/test/raw/master/.github/makecode/blocks.png)
-
-#### Metadata (used for search, rendering)
-
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
